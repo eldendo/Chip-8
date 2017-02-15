@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>Chip-8</title>
+	</header>
+	<body>
+		<H1>Chip-8 interpreter</H1>
+		<p>Copyright (c) 2017 by ir. Marc Dendooven</p>
+		<p>Version 0.1 DEV</p>
+		<input type="radio" name="shift" onclick="setShift(true)" checked/>shift Vy to Vx<br/>
+		<input type="radio" name="shift" onclick="setShift(false)"/>shift Vx to Vx<br/> 
+		<br/>
+		<input type="file" id="myFile" onchange="readFile()"/>
+		<br/>
+		<canvas id="myCanvas" width="320" height="160" style="border:1px solid #000000">
+			Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<br/>		
+		<input type="button" id="but1" value="1" onmousedown="push(1)" onmouseup="push(255)"/>
+		<input type="button" id="but2" value="2" onmousedown="push(2)" onmouseup="push(255)"/>	
+		<input type="button" id="but3" value="3" onmousedown="push(3)" onmouseup="push(255)"/>	
+		<input type="button" id="butC" value="C" onmousedown="push(12)" onmouseup="push(255)"/>
+		<button onclick = run()>Run</button>
+		<br/>		
+		<input type="button" id="but4" value="4" onmousedown="push(4)" onmouseup="push(255)"/>
+		<input type="button" id="but5" value="5" onmousedown="push(5)" onmouseup="push(255)"/>	
+		<input type="button" id="but6" value="6" onmousedown="push(6)" onmouseup="push(255)"/>	
+		<input type="button" id="butD" value="D" onmousedown="push(13)" onmouseup="push(255)"/>
+		<button onclick = stop()>Stop</button>
+		<br/>		
+		<input type="button" id="but7" value="7" onmousedown="push(7)" onmouseup="push(255)"/>
+		<input type="button" id="but8" value="8" onmousedown="push(8)" onmouseup="push(255)"/>	
+		<input type="button" id="but9" value="9" onmousedown="push(9)" onmouseup="push(255)"/>	
+		<input type="button" id="butE" value="E" onmousedown="push(14)" onmouseup="push(255)"/>
+		<button onclick = oneCycle()>One Cycle</button>
+		<br/>		
+		<input type="button" id="butA" value="A" onmousedown="push(10)" onmouseup="push(255)"/>
+		<input type="button" id="but0" value="0" onmousedown="push(0)" onmouseup="push(255)"/>	
+		<input type="button" id="butB" value="B" onmousedown="push(11)" onmouseup="push(255)"/>	
+		<input type="button" id="butF" value="F" onmousedown="push(15)" onmouseup="push(255)"/>
+		<button onclick = reset()>Reset</button>
+		<script src="./chip8.js"></script>
+	</body>
+</html>
